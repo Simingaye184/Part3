@@ -1,0 +1,181 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap');
+
+:root{
+  --gold:#d4af37;
+  --black:#0d0d0d;
+  --charcoal:#1f1f1f;
+  --light:#fdf8f5;
+  --text:#333;
+  --text-light:#e0e0e0;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Poppins',Helvetica,sans-serif;
+  background:#fdf8f5;
+  color:var(--text);
+  line-height:1.7;
+}
+
+/* --- NAV --- */
+nav{
+  background:rgba(31,31,31,0.9);
+  backdrop-filter:blur(10px);
+  color:#fff;
+  padding:1.2rem 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+nav h2{
+  color:var(--gold);
+  letter-spacing:2px;
+  font-family:'Playfair Display',serif;
+}
+nav a{
+  color:var(--text-light);
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:500;
+  transition:0.3s;
+}
+nav a:hover, nav a.active{
+  color:var(--gold);
+}
+
+/* --- HEADERS --- */
+.header, .page-header{
+  background:linear-gradient(180deg, var(--black), #1a1a1a);
+  color:#fff;
+  padding:80px 5%;
+  text-align:center;
+}
+.header h1, .page-header h1{
+  font-family:'Playfair Display',serif;
+  font-size:2.8rem;
+  margin-bottom:10px;
+}
+.header h1 span, .page-header h1 span{ color:var(--gold); }
+.header p, .page-header p{
+  color:#a0a0a0;
+  max-width:600px;
+  margin:0 auto;
+}
+
+/* --- SECTIONS --- */
+section, .container, .section{
+  max-width:1200px;
+  margin:0 auto;
+  padding:60px 5%;
+}
+h2, h3{
+  font-family:'Playfair Display',serif;
+  color:var(--charcoal);
+  margin-bottom:15px;
+}
+
+/* --- ABOUT US --- */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+.about-content p{ margin-bottom:15px; color:#555; }
+
+/* --- SERVICES --- */
+.services, .services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:25px;
+  margin-top:30px;
+}
+.service-card{
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.06);
+  border-top:4px solid var(--gold);
+  transition:0.3s;
+}
+.service-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* --- CONTACT --- */
+.contact-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+.contact-info{
+  background:var(--charcoal);
+  color:#fff;
+  padding:40px;
+}
+.contact-info h3{ color:#fff; }
+.contact-info h3 span{ color:var(--gold); }
+.contact-form{ padding:40px; }
+.form-group{ margin-bottom:18px; }
+label{
+  display:block;
+  font-size:0.8rem;
+  font-weight:600;
+  margin-bottom:6px;
+  text-transform:uppercase;
+}
+input, textarea, select{
+  width:100%;
+  padding:12px 14px;
+  border:1.5px solid #e5e5e5;
+  border-radius:8px;
+  font-family:'Poppins',sans-serif;
+}
+input:focus, textarea:focus{
+  outline:none;
+  border-color:var(--gold);
+}
+textarea{ min-height:120px; }
+
+/* --- BUTTONS --- */
+.btn, button{
+  background:var(--gold);
+  color:#000;
+  border:none;
+  padding:12px 28px;
+  border-radius:25px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+.btn:hover, button:hover{
+  background:#b8962e;
+  transform:translateY(-2px);
+}
+
+/* --- FOOTER --- */
+footer{
+  background:var(--black);
+  color:#888;
+  text-align:center;
+  padding:30px 5%;
+  margin-top:50px;
+}
+
+/* --- RESPONSIVE --- */
+@media(max-width:800px){
+  .about-grid, .contact-wrapper{
+    grid-template-columns:1fr;
+  }
+  nav{ flex-direction:column; gap:10px; }
+}
